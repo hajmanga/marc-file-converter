@@ -1,0 +1,5 @@
+Record 73333 has following problems:
+  ERROR: Record is missing fields 101, 102, 317 and 700.
+  WARNING: Record is missing field 327.
+  ERROR: Field 010 should have subfield b.
+  WARNING: Field 215 should have subfield e.

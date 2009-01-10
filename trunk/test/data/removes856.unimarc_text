@@ -1,0 +1,54 @@
+
+001.__ 15059453
+005.__ 20080424161546.0
+010.__ |a 9780760330692 (hardbound w/ jacket)
+010.__ |a 0760330697 (hardbound w/ jacket)
+200.1_ |a Inside IMSA's legendary GTP race cars
+       |e the prototype experience
+       |f J.A. Martin and Michael J. Fuller
+210.__ |a St. Paul, MN
+       |c Motorbooks
+       |d 2008
+215.__ |a 256 p.
+       |c ill. (chiefly col.)
+       |d 29 cm
+320.__ |a Includes bibliographical references (p. 250) and index.
+327.1_ |a Lola
+       |a March
+       |a Jaguar and Group 44
+       |a Mustang
+       |a Porsche
+       |a Kudzu
+       |a Corvette
+       |a Probe
+       |a Nissan
+       |a Spice
+       |a Jaguar and twr
+       |a Toyota
+       |a Intrepid
+       |a Mazda.
+606.0_ |a Automobiles, Racing
+       |2 lc
+606.0_ |a Experimental automobiles
+       |2 lc
+601.0_ |a IMSA GTP Series (Competition)
+       |2 lc
+601.0_ |a International Motor Sports Association
+       |2 lc
+680.__ |a TL236
+       |b M35175 2008
+700._1 |a Martin
+       |b J
+       |4 070
+701._1 |a Fuller
+       |b Michael
+       |d 1974-
+       |4 070
+711.02 |a Motorbooks
+       |4 650
+
+ERROR: Record is missing fields 101, 102 and 317.
+ERROR: Field 010 should have subfield b.
+ERROR: Field 010 should have subfield b.
+WARNING: Field 215 should have subfield e.
+

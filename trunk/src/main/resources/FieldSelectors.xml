@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <bean id="selectField005" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="5"/>
+  </bean>
+
+  <bean id="selectField001" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="1"/>
+  </bean>
+
+  <bean id="selectField010" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="10"/>
+  </bean>
+
+  <bean id="selectField200" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="200"/>
+  </bean>
+
+  <bean id="selectField206" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="206"/>
+  </bean>
+
+  <bean id="selectField207" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="207"/>
+  </bean>
+
+  <bean id="selectField208" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="208"/>
+  </bean>
+
+  <bean id="selectField210" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="210"/>
+  </bean>
+
+  <bean id="selectField211" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="211"/>
+  </bean>
+
+  <bean id="selectField215" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="215"/>
+  </bean>
+
+  <bean id="selectField260" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="260"/>
+  </bean>
+
+  <bean id="selectField322" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="322"/>
+  </bean>
+  
+  <bean id="selectField324" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="324"/>
+  </bean>
+  
+  <bean id="selectField327" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="327"/>
+  </bean>
+  
+  <bean id="selectField345" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="345"/>
+  </bean>
+  
+  <bean id="selectField700" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="700"/>
+  </bean>
+  
+  <bean id="selectField710" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="710"/>
+  </bean>
+  
+  <bean id="selectField720" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="720"/>
+  </bean>
+  
+  <bean id="selectField802" class="ppa.marc.predicate.FieldByIdSelector">
+    <constructor-arg value="802"/>
+  </bean>
+
+  <bean id="selectAllFields" class="ppa.marc.predicate.AllFieldsSelector"/>
+  
+</beans>

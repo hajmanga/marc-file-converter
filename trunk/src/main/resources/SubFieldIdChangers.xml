@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <bean id="renameSubFieldsBA" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="b" index="0"/>
+    <constructor-arg value="a" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsQG" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="q" index="0"/>
+    <constructor-arg value="g" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsDqFg" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="dq" index="0"/>
+    <constructor-arg value="fg" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsAbcAef" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="abc" index="0"/>
+    <constructor-arg value="aef" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsAcbAdc" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="acb" index="0"/>
+    <constructor-arg value="adc" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsAbcAcd" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="abc" index="0"/>
+    <constructor-arg value="acd" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsNpHi" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="np" index="0"/>
+    <constructor-arg value="hi" index="1"/>
+  </bean>
+
+  <bean id="renameSubFieldsVzyJyz" class="ppa.marc.converter.generic.SubFieldIdChanger">
+    <constructor-arg value="vzy" index="0"/>
+    <constructor-arg value="jyz" index="1"/>
+  </bean>
+
+</beans>

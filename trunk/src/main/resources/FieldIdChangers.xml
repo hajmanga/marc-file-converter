@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <bean id="renameTo001__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="1" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo005__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="5" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo010__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="10" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo2001_" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="200" index="0"/>
+    <constructor-arg value="1" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo205__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="205" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo210__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="210" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo215__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="215" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo2251_" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="225" index="0"/>
+    <constructor-arg value="1" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo320__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="320" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo3271_" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="327" index="0"/>
+    <constructor-arg value="1" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo517__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="517" index="0"/>
+    <constructor-arg value="0" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo600_1" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="600" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="1" index="2"/>
+  </bean>
+
+  <bean id="renameTo6010_" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="601" index="0"/>
+    <constructor-arg value="0" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo6060_" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="606" index="0"/>
+    <constructor-arg value="0" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo607__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="607" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo660__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="660" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo680__" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="680" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="_" index="2"/>
+  </bean>
+
+  <bean id="renameTo700_1" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="700" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="1" index="2"/>
+  </bean>
+
+  <bean id="renameTo701_1" class="ppa.marc.converter.generic.FieldIdChanger">
+    <constructor-arg value="701" index="0"/>
+    <constructor-arg value="_" index="1"/>
+    <constructor-arg value="1" index="2"/>
+  </bean>
+
+</beans>

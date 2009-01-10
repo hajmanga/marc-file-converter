@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <import resource="ppa.marc.RecordReader.xml"/>
+
+  <bean id="marcConverter" class="ppa.marc.MarcConverter" lazy-init="true">
+  	<constructor-arg ref="configuration"/>
+  	<constructor-arg ref="marcFileReader"/>
+  	<constructor-arg ref="converter"/>
+  	<constructor-arg ref="writer"/>
+  	<constructor-arg ref="streamOpener"/>
+  	<constructor-arg ref="validator"/>
+  </bean>
+
+  <bean id="argumentParser" class="ppa.marc.JsapBasedArgumentParser">
+  	<constructor-arg ref="jsap"/>
+  </bean>
+
+  <bean id="converterBeanLoader" class="ppa.marc.TypeBasedFormatBeanLoader">
+  	<constructor-arg value="Converter"/>
+  </bean>
+  
+  <bean id="validatorBeanLoader" class="ppa.marc.TypeBasedFormatBeanLoader">
+  	<constructor-arg value="Validator"/>
+  </bean>
+  
+  <bean id="writerBeanLoader" class="ppa.marc.TypeBasedFormatBeanLoader">
+  	<constructor-arg value="Writer"/>
+  </bean>
+
+  <bean id="jsap" class="com.martiansoftware.jsap.JSAP"/>
+
+  <bean id="streamOpener" class="ppa.marc.StreamOpener"/>
+
+</beans>
