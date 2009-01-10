@@ -1,0 +1,15 @@
+*Setting*	*Value*	*Value*	*Value*
+Library	OperatingSystem
+
+*Variable*	*Value* *Value*
+${testDataDirectory}	test/data
+
+*Test case*	*Value*	*Value*
+Basic MARC21 text conversion	[Tags]	regression	
+	Test converter with data set	basic
+
+*Keyword*	*Action*	*Argument*	*Argument*
+Test converter with data set	[Arguments]	${basename}	
+	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.marc21_text
+	${actualOutput}= 	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar --to marc21_text ${testDataDirectory}/${basename}.source
+	Should be equal	${expectedOutput}	${actualOutput}

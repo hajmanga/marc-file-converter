@@ -1,0 +1,28 @@
+*Setting*	*Value*	*Value*	*Value*
+Library	OperatingSystem
+
+*Variable*	*Value* *Value*
+${testDataDirectory}	test/data
+
+*Test case*	*Value*	*Value*
+Basic validation	[Tags]	regression	
+	Test validation with data set	basic
+
+Validation messages of two records are separated by empty line	[Tags]	regression	
+	Test validation with data set	two_records
+
+Warns about missing field 700	[Tags]	regression	
+	Test validation with data set	700missing
+
+Warns when two 10 fields miss subfield b 	[Tags]	regression	
+	Test validation with data set	two10fields
+
+Error about pipe character is shown 	[Tags]	regression	
+	Test validation with data set	pipe
+
+*Keyword*	*Action*	*Argument*	*Argument*
+Test validation with data set	[Arguments]	${basename}	
+	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar -v ${testDataDirectory}/${basename}.source 2> target/stderr
+	${actualOutput}= 	Run	cat target/stderr
+	${expectedOutput}= 	Run	cat ${testDataDirectory}/errors-${basename}.unimarc_text
+	Should be equal	${expectedOutput}	${actualOutput}

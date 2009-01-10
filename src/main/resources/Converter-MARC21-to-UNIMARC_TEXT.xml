@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <import resource="FieldIdChangers.xml"/>
+  <import resource="FieldSelectors.xml"/>
+  <import resource="SubFieldSelectors.xml"/>
+  <import resource="SubFieldTrimmers.xml"/>
+  <import resource="SubFieldIdChangers.xml"/>
+  <import resource="SubFieldAppenders.xml"/>
+
+  <bean id="formatBean" class="ppa.marc.converter.DefaultConversionController">
+  	<constructor-arg>
+  	  <list>
+  	    <ref bean="marc21FieldRemover"/>
+  	    <ref bean="publisherInserter"/>
+  	  </list>
+  	</constructor-arg>
+  	<constructor-arg>
+  	  <map>
+   	<entry>
+          <key>
+            <value>1</value>
+          </key>
+          <list>
+            <ref bean="renameTo001__"/>
+          </list>
+        </entry>
+   	<entry>
+          <key>
+            <value>5</value>
+          </key>
+          <list>
+            <ref bean="renameTo005__"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>20</value>
+          </key>
+          <list>
+            <ref bean="removeOtherSubFieldsThanA"/>
+            <ref bean="cleanSpaceColonA"/>
+            <ref bean="renameTo010__"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>43</value>
+          </key>
+          <list>
+            <ref bean="renameTo660__"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>50</value>
+          </key>
+          <list>
+            <ref bean="cleanHeadDotB"/>
+            <ref bean="renameTo680__"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>100</value>
+          </key>
+          <list>
+            <ref bean="splitPersonalNameFieldAndDeleteOtherSubFields"/>
+            <ref bean="cleanTailDotB"/>
+            <ref bean="addSubField4070"/>
+            <ref bean="renameTo700_1"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>245</value>
+          </key>
+          <list>
+            <ref bean="cleanTailSpaceDotColonSlashAbc"/>
+            <ref bean="renameTo2001_"/>
+            <ref bean="renameSubFieldsAbcAef"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>250</value>
+          </key>
+          <list>
+            <ref bean="renameTo205__"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>260</value>
+          </key>
+          <list>
+            <ref bean="renameTo210__"/>
+            <ref bean="renameSubFieldsAbcAcd"/>
+            <ref bean="cleanTailCommaColonSemicolonDotSpaceAbcd"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>300</value>
+          </key>
+          <list>
+            <ref bean="renameTo215__"/>
+            <ref bean="renameSubFieldsAcbAdc"/>
+            <ref bean="cleanSpaceColonSemicolonAbc"/>
+            <ref bean="cleanTailDotD"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>440</value>
+          </key>
+          <list>
+            <ref bean="cleanSpaceCommaSemicolonAxv"/>
+            <ref bean="renameTo2251_"/>
+            <ref bean="renameSubFieldsNpHi"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>490</value>
+          </key>
+          <list>
+            <ref bean="cleanSpaceCommaSemicolonAxv"/>
+            <ref bean="renameTo2251_"/>
+            <ref bean="renameSubFieldsNpHi"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>500</value>
+          </key>
+          <list>
+            <ref bean="renameTo320__"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>504</value>
+          </key>
+          <list>
+            <ref bean="renameTo320__"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>505</value>
+          </key>
+          <list>
+            <ref bean="tocSplitter"/>
+            <ref bean="renameTo3271_"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>600</value>
+          </key>
+          <list>
+            <ref bean="splitPersonalNameField"/>
+            <ref bean="addSubField2lc"/>
+            <ref bean="renameTo600_1"/>
+            <ref bean="renameSubFieldsDqFg"/>
+            <ref bean="cleanDotCommaAfvxz"/>
+            <ref bean="cleanCommaC"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>651</value>
+          </key>
+          <list>
+            <ref bean="addSubField2lc"/>
+            <ref bean="renameTo607__"/>
+            <ref bean="renameSubFieldsVzyJyz"/>
+            <ref bean="cleanDotCommaAfvxz"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>650</value>
+          </key>
+          <list>
+            <ref bean="addSubField2lc"/>
+            <ref bean="renameTo6060_"/>
+            <ref bean="cleanDotCommaAfvxz"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>610</value>
+          </key>
+          <list>
+            <ref bean="addSubField2lc"/>
+            <ref bean="renameTo6010_"/>
+            <ref bean="cleanDotCommaAfvxz"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>611</value>
+          </key>
+          <list>
+            <ref bean="addSubField2lc"/>
+            <ref bean="renameTo6010_"/>
+            <ref bean="cleanDotCommaAfvxz"/>
+          </list>
+        </entry>
+  	<entry>
+          <key>
+            <value>700</value>
+          </key>
+          <list>
+            <ref bean="renameTo701_1"/>
+            <ref bean="splitPersonalNameField"/>
+            <ref bean="addSubField4070"/>
+            <ref bean="cleanTailDotB"/>
+            <ref bean="renameSubFieldsQG"/>
+            <ref bean="cleanParenthesisG"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>711</value>
+          </key>
+          <list>
+            <ref bean="addSubField4650"/>
+            <ref bean="renameSubFieldsBA"/>
+            <ref bean="cleanTailCommaColonSpaceAbcd"/>
+          </list>
+        </entry>
+    	<entry>
+          <key>
+            <value>740</value>
+          </key>
+          <list>
+            <ref bean="renameTo517__"/>
+            <ref bean="cleanTailDotA"/>
+          </list>
+        </entry>
+  	  </map>
+  	</constructor-arg>
+  	<constructor-arg>
+  	  <list>
+  	    <ref bean="fieldSorter"/>
+  	  </list>
+  	</constructor-arg>
+  </bean>
+
+  <bean id="splitPersonalNameFieldAndDeleteOtherSubFields" class="ppa.marc.converter.marc21.PersonalNameSplitter">
+    <constructor-arg ref="selectSubFieldA"/>
+    <constructor-arg value="true"/>
+  </bean>
+
+  <bean id="splitPersonalNameField" class="ppa.marc.converter.marc21.PersonalNameSplitter">
+    <constructor-arg ref="selectSubFieldA"/>
+    <constructor-arg value="false"/>
+  </bean>
+
+  <bean id="removeOtherSubFieldsThanA" class="ppa.marc.converter.generic.OtherSubFieldRemover">
+    <constructor-arg value="a"/>
+  </bean>
+
+  <bean id="publisherInserter" class="ppa.marc.converter.generic.FieldCopier">
+    <constructor-arg ref="selectField260" index="0"/>
+    <constructor-arg ref="selectSubFieldB" index="1"/>
+    <constructor-arg value="711"/>
+    <constructor-arg value="0"/>
+    <constructor-arg value="2"/>
+  </bean>
+
+  <bean id="fieldSorter" class="ppa.marc.converter.generic.FieldGrouper">
+    <constructor-arg>
+      <bean class="ppa.marc.converter.comparator.FieldIdByGroupComparator">
+  	<constructor-arg>
+  	  <list>
+  	    <list>
+  	      <value>1</value>
+  	    </list>
+  	    <list>
+  	      <value>5</value>
+  	    </list>
+  	    <list>
+  	      <value>10</value>
+  	    </list>
+  	    <list>
+  	      <value>100</value>
+  	    </list>
+  	    <list>
+  	      <value>200</value>
+  	    </list>
+  	    <list>
+  	      <value>205</value>
+  	    </list>
+  	    <list>
+  	      <value>210</value>
+  	    </list>
+  	    <list>
+  	      <value>215</value>
+  	    </list>
+  	    <list>
+  	      <value>225</value>
+  	    </list>
+  	    <list>
+  	      <value>320</value>
+  	    </list>
+  	    <list>
+  	      <value>327</value>
+  	    </list>
+  	    <list>
+  	      <value>517</value>
+  	    </list>
+  	    <list>
+  	      <value>600</value>
+  	      <value>601</value>
+  	      <value>606</value>
+  	      <value>607</value>
+  	    </list>
+  	    <list>
+  	      <value>660</value>
+  	    </list>
+  	    <list>
+  	      <value>680</value>
+  	    </list>
+  	    <list>
+  	      <value>700</value>
+  	      <value>701</value>
+  	      <value>711</value>
+  	    </list>
+  	  </list>
+  	</constructor-arg>
+      </bean>
+
+    </constructor-arg>
+  </bean>
+
+  <bean id="tocSplitter" class="ppa.marc.converter.marc21.TocSplitter">
+    <constructor-arg ref="selectSubFieldA"/>
+  </bean>
+
+  <bean id="marc21FieldRemover" class="ppa.marc.converter.generic.FieldRemover">
+    <constructor-arg>
+      <list>
+        <value>8</value>
+        <value>10</value>
+        <value>15</value>
+        <value>16</value>
+        <value>35</value>
+        <value>40</value>
+        <value>42</value>
+        <value>82</value>
+        <value>246</value>
+        <value>263</value>
+        <value>830</value>
+        <value>856</value>
+        <value>906</value>
+        <value>920</value>
+        <value>922</value>
+        <value>923</value>
+        <value>925</value>
+        <value>955</value>
+        <value>963</value>
+        <value>984</value>
+        <value>985</value>
+        <value>991</value>
+      </list>
+    </constructor-arg>
+  </bean>
+
+</beans>

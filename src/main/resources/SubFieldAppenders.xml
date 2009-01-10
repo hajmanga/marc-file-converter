@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <bean id="addSubField4650" class="ppa.marc.converter.generic.SubFieldAppender">
+    <constructor-arg>
+      <bean class="ppa.marc.domain.SubField">
+        <constructor-arg value="4" index="0"/>
+        <constructor-arg value="650" index="1"/>
+      </bean>
+    </constructor-arg>
+  </bean>
+
+  <bean id="addSubField4070" class="ppa.marc.converter.generic.SubFieldAppender">
+    <constructor-arg>
+      <bean class="ppa.marc.domain.SubField">
+        <constructor-arg value="4" index="0"/>
+        <constructor-arg value="070" index="1"/>
+      </bean>
+    </constructor-arg>
+  </bean>
+
+  <bean id="addSubField2lc" class="ppa.marc.converter.generic.SubFieldAppender">
+    <constructor-arg>
+      <bean class="ppa.marc.domain.SubField">
+        <constructor-arg value="2" index="0"/>
+        <constructor-arg value="lc" index="1"/>
+      </bean>
+    </constructor-arg>
+  </bean>
+
+</beans>

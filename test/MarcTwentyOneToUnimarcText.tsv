@@ -1,0 +1,39 @@
+*Setting*	*Value*	*Value*	*Value*
+Library	OperatingSystem
+
+*Variable*	*Value* *Value*
+${testDataDirectory}	test/data
+
+*Test case*	*Value*	*Value*
+Basic conversion	[Tags]	regression	
+	Test converter with data set	basic
+
+Two records are separated by empty line	[Tags]	regression	
+	Test converter with data set	two_records
+
+Geographical code is converted	[Tags]	regression	
+	Test converter with data set	geocode
+
+Multiple 320 fields are converted	[Tags]	regression	
+	Test converter with data set	multi320
+
+Subfield 600 c is converted	[Tags]	regression	
+	Test converter with data set	600c
+
+Source field 920 is removed	[Tags]	regression	
+	Test converter with data set	920removed
+
+Converts two 10 fields	[Tags]	regression	
+	Test converter with data set	two10fields
+
+Removes field 984	[Tags]	regression	
+	Test converter with data set	removes984
+
+Removes field 856	[Tags]	regression	
+	Test converter with data set	removes85656
+
+*Keyword*	*Action*	*Argument*	*Argument*
+Test converter with data set	[Arguments]	${basename}	
+	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.unimarc_text
+	${actualOutput}= 	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar ${testDataDirectory}/${basename}.source
+	Should be equal	${expectedOutput}	${actualOutput}

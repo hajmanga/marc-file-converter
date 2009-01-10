@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <bean id="cleanTailSpaceDotColonSlashAbc" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="abc" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=" .:/" index="2"/>
+  </bean>
+
+  <bean id="cleanTailDotA" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="a" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value="." index="2"/>
+  </bean>
+
+  <bean id="cleanTailDotB" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="b" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value="." index="2"/>
+  </bean>
+
+  <bean id="cleanSpaceColonSemicolonAbc" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="abc" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=" :;" index="2"/>
+  </bean>
+
+  <bean id="cleanTailCommaColonSpaceAbcd" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="abcd" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=",: " index="2"/>
+  </bean>
+
+  <bean id="cleanTailCommaColonDotSpaceAbcd" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="abcd" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=",:. " index="2"/>
+  </bean>
+
+  <bean id="cleanTailCommaColonSemicolonDotSpaceAbcd" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="abcd" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=",:;. " index="2"/>
+  </bean>
+
+  <bean id="cleanSpaceCommaSemicolonAxv" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="axv" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=" ,;" index="2"/>
+  </bean>
+
+  <bean id="cleanCommaC" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="c" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value="," index="2"/>
+  </bean>
+
+  <bean id="cleanDotCommaAfvxz" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="afvxz" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=".," index="2"/>
+  </bean>
+
+  <bean id="cleanSpaceColonA" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="a" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value=" :" index="2"/>
+  </bean>
+
+  <bean id="cleanHeadDotB" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="b" index="0"/>
+    <constructor-arg value="." index="1"/>
+    <constructor-arg value="" index="2"/>
+  </bean>
+
+  <bean id="cleanTailDotD" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="d" index="0"/>
+    <constructor-arg value="" index="1"/>
+    <constructor-arg value="." index="2"/>
+  </bean>
+
+  <bean id="cleanParenthesisG" class="ppa.marc.converter.generic.SubFieldTrimmer">
+    <constructor-arg value="g" index="0"/>
+    <constructor-arg value="( " index="1"/>
+    <constructor-arg value=") " index="2"/>
+  </bean>
+
+</beans>

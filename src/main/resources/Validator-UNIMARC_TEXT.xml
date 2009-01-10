@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:util="http://www.springframework.org/schema/util" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+                           http://www.springframework.org/schema/util 
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd 
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+  <import resource="FieldSelectors.xml"/>
+  <import resource="SubFieldSelectors.xml"/>
+			   
+  <bean id="formatBean" class="ppa.marc.validator.Validator">
+  	<constructor-arg>
+  	  <list>
+  	    <ref bean="mandatoryFields"/>
+  	    <ref bean="optionalFields"/>
+  	    <ref bean="subFieldsOf010"/>
+  	    <ref bean="warn200AStartsWithThe"/>
+  	    <ref bean="errorSubFieldContainsPipe"/>
+  	    <ref bean="subFieldsOf215"/>
+  	    <ref bean="warnSubFieldsOf215"/>
+  	    <ref bean="field001IsUnique"/>
+  	    <ref bean="field005IsUnique"/>
+  	    <ref bean="field200IsUnique"/>
+  	    <ref bean="field206IsUnique"/>
+  	    <ref bean="field207IsUnique"/>
+  	    <ref bean="field208IsUnique"/>
+  	    <ref bean="field210IsUnique"/>
+  	    <ref bean="field211IsUnique"/>
+  	    <ref bean="field322IsUnique"/>
+  	    <ref bean="field324IsUnique"/>
+  	    <ref bean="field327IsUnique"/>
+  	    <ref bean="field345IsUnique"/>
+  	    <ref bean="field700IsUnique"/>
+  	    <ref bean="field710IsUnique"/>
+  	    <ref bean="field720IsUnique"/>
+  	    <ref bean="field802IsUnique"/>
+  	  </list>
+  	</constructor-arg>
+  </bean>
+
+  <bean id="mandatoryFields" class="ppa.marc.validator.rules.RecordHasFields">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg>
+  	  <list>
+  	    <value>1</value>
+  	    <value>5</value>
+  	    <value>10</value>
+  	    <value>101</value>
+  	    <value>102</value>
+  	    <value>200</value>
+  	    <value>210</value>
+  	    <value>215</value>
+  	    <value>317</value>
+  	    <value>680</value>
+  	    <value>700</value>
+  	    <value>711</value>
+  	  </list>
+  	</constructor-arg>
+  </bean>
+
+  <bean id="optionalFields" class="ppa.marc.validator.rules.RecordHasFields">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.WARNING"/>
+  	</constructor-arg>
+  	<constructor-arg>
+  	  <list>
+  	    <value>320</value>
+  	    <value>327</value>
+  	  </list>
+  	</constructor-arg>
+  </bean>
+
+  <bean id="field001IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField001"/>
+  </bean>
+  <bean id="field005IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField005"/>
+  </bean>
+  <bean id="field200IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField200"/>
+  </bean>
+  <bean id="field206IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField206"/>
+  </bean>
+  <bean id="field207IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField207"/>
+  </bean>
+  <bean id="field208IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField208"/>
+  </bean>
+  <bean id="field210IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField210"/>
+  </bean>
+  <bean id="field211IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField211"/>
+  </bean>
+  <bean id="field322IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField322"/>
+  </bean>
+  <bean id="field324IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField324"/>
+  </bean>
+  <bean id="field327IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField327"/>
+  </bean>
+  <bean id="field345IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField345"/>
+  </bean>
+  <bean id="field802IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField802"/>
+  </bean>
+  <bean id="field700IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField700"/>
+  </bean>
+  <bean id="field710IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField710"/>
+  </bean>
+  <bean id="field720IsUnique" class="ppa.marc.validator.rules.FieldIsUnique">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField720"/>
+  </bean>
+
+  <bean id="subFieldsOf010" class="ppa.marc.validator.rules.RecordHasSubFields">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField010"/>
+  	<constructor-arg ref="detectMissingSubFieldsAb"/>
+  </bean>
+  <bean id="subFieldsOf215" class="ppa.marc.validator.rules.RecordHasSubFields">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField215"/>
+  	<constructor-arg ref="detectMissingSubFieldsCd"/>
+  </bean>
+  <bean id="warnSubFieldsOf215" class="ppa.marc.validator.rules.RecordHasSubFields">
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.WARNING"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField215"/>
+  	<constructor-arg ref="detectMissingSubFieldE"/>
+  </bean>
+
+  <bean id="detectMissingSubFieldsAb" class="ppa.marc.validator.rules.util.MissingSubFieldIdDetector">
+    <constructor-arg value="ab"/>
+  </bean>
+  <bean id="detectMissingSubFieldsCd" class="ppa.marc.validator.rules.util.MissingSubFieldIdDetector">
+    <constructor-arg value="cd"/>
+  </bean>
+  <bean id="detectMissingSubFieldE" class="ppa.marc.validator.rules.util.MissingSubFieldIdDetector">
+    <constructor-arg value="e"/>
+  </bean>
+
+  <bean id="subFieldAStartsWithThe" class="ppa.marc.validator.rules.util.SubFieldsThatStartWith">
+    <constructor-arg ref="selectSubFieldA"/>
+    <constructor-arg value="The "/>
+  </bean>
+
+  <bean id="subFieldContainsPipe" class="ppa.marc.validator.rules.util.SubFieldsThatContain">
+    <constructor-arg ref="selectAllSubFields"/>
+    <constructor-arg value="|"/>
+  </bean>
+
+  <bean id="warn200AStartsWithThe" class="ppa.marc.validator.rules.SubFieldsDoNotViolateRule">
+  	<constructor-arg value="Add NSB block to"/>
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.WARNING"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectField200"/>
+  	<constructor-arg ref="subFieldAStartsWithThe"/>
+  </bean>
+
+  <bean id="errorSubFieldContainsPipe" class="ppa.marc.validator.rules.SubFieldsDoNotViolateRule">
+  	<constructor-arg value="Remove pipe (|) character from"/>
+  	<constructor-arg>
+  	  <util:constant static-field="ppa.marc.validator.Severity.ERROR"/>
+  	</constructor-arg>
+  	<constructor-arg ref="selectAllFields"/>
+  	<constructor-arg ref="subFieldContainsPipe"/>
+  </bean>
+
+</beans>

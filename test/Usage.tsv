@@ -1,0 +1,12 @@
+*Setting*	*Value*	*Value*	*Value*
+Library	OperatingSystem
+
+*Variable*	*Value* *Value*
+${testDataDirectory}	test/data
+
+*Test case*	*Value*	*Value*
+Usage and help	[Tags]	regression	
+	${actualOutput}= 	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar 2> target/stderr
+	${expectedOutput}= 	Run	cat ${testDataDirectory}/usage-missing-input
+	${actualOutput}= 	Run	cat target/stderr
+	Should be equal	${expectedOutput}	${actualOutput}
