@@ -11,5 +11,5 @@ Basic MARC21 text conversion	[Tags]	regression
 *Keyword*	*Action*	*Argument*	*Argument*
 Test converter with data set	[Arguments]	${basename}	
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.marc21_text
-	${actualOutput}= 	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar --to marc21_text ${testDataDirectory}/${basename}.source
+	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar --to marc21_text ${testDataDirectory}/${basename}.source
 	Should be equal	${expectedOutput}	${actualOutput}

@@ -1,0 +1,23 @@
+There were errors in command line arguments:
+- Input format 'UNIMARC_TEXT' is not supported.
+- Parameter 'input' is required.
+
+Usage:
+  MarcConverter [-v|--validate] [(-t|--to) <to>] [(-o|--output) <output>] [(-f|--from) <format>] <input>
+where allowed parameters are:
+
+  [-v|--validate]
+        Validate conversion result and print out validation messages.
+
+  [(-t|--to) <to>]
+        Defines target format. (default: UNIMARC_TEXT)
+
+  [(-o|--output) <output>]
+        Output file's name.  If undefined, then output is shown on display.
+
+  [(-f|--from) <format>]
+        Input file's format. (default: MARC21)
+
+  <input>
+        Input file's name.
+

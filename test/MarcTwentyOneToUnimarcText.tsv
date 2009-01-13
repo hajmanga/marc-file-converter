@@ -30,10 +30,10 @@ Removes field 984	[Tags]	regression
 	Test converter with data set	removes984
 
 Removes field 856	[Tags]	regression	
-	Test converter with data set	removes85656
+	Test converter with data set	removes856
 
 *Keyword*	*Action*	*Argument*	*Argument*
 Test converter with data set	[Arguments]	${basename}	
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.unimarc_text
-	${actualOutput}= 	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar ${testDataDirectory}/${basename}.source
+	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar ${testDataDirectory}/${basename}.source
 	Should be equal	${expectedOutput}	${actualOutput}
