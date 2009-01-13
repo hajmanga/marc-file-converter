@@ -5,8 +5,13 @@ Library	OperatingSystem
 ${testDataDirectory}	test/data
 
 *Test case*	*Value*	*Value*
-Usage and help	[Tags]	regression	
-	${actualOutput}= 	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar 2> target/stderr
+Complains about invalid input format	[Tags]	issue-1
+	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar 2> target/stderr
+	${actualOutput}= 	Run	cat target/stderr
+	Should contain	${actualOutput}	Input format 'UNIMARC_TEXT' isn't supported
+
+Usage and help in case of no parameters	[Tags]	regression
+	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar 2> target/stderr
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/usage-missing-input
 	${actualOutput}= 	Run	cat target/stderr
 	Should be equal	${expectedOutput}	${actualOutput}
