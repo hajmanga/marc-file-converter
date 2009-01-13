@@ -6,12 +6,16 @@ ${testDataDirectory}	test/data
 
 *Test case*	*Value*	*Value*
 Complains about invalid input format	[Tags]	issue-1
-	Run	java -jar target/ucconv-1.0-jar-with-dependencies.jar 2> target/stderr
+	Run converter with arguments	--from unimarc_text
 	${actualOutput}= 	Run	cat target/stderr
 	Should contain	${actualOutput}	Input format 'UNIMARC_TEXT' isn't supported
 
 Usage and help in case of no parameters	[Tags]	regression
-	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar 2> target/stderr
+	Run converter with arguments	\
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/usage-missing-input
 	${actualOutput}= 	Run	cat target/stderr
 	Should be equal	${expectedOutput}	${actualOutput}
+
+*Keyword*	*Action*	*Argument*	*Argument*
+Run converter with arguments	[Arguments]	${args}
+	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar ${args} 2> target/stderr
