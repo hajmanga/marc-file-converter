@@ -1,9 +1,9 @@
 <project> 
   <modelVersion>4.0.0</modelVersion> 
   <groupId>ppa.ucconv</groupId> 
-  <artifactId>ucconv</artifactId> 
-  <version>1.0</version> 
-  <name>Unimarc converter</name> 
+  <artifactId>marc-file-converter</artifactId> 
+  <version>0.5</version> 
+  <name>MARC converter</name> 
   <packaging>jar</packaging> 
   <build>
     <plugins>
