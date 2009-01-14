@@ -28,7 +28,7 @@ public class Main {
 			marcConverter.execute();
 		} catch (ParameterException e) {
 			System.err.println(e.getMessage());
-			System.err.println(argumentParser.getHelp());
+			if(e.isShowHelp()) System.err.println(argumentParser.getHelp());
 		} catch (IOException e) {
 			System.err.println("File access failed: " + e.getMessage());
 		}

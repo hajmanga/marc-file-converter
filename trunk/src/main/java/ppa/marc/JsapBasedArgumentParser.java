@@ -25,12 +25,12 @@ public class JsapBasedArgumentParser implements ArgumentParser {
 			return extractConfiguration(jsapResult);
 		}
 		else {
-			throw new ParameterException(extractErrorMessage(jsapResult));
+			throw new ParameterException(extractErrorMessage(jsapResult), true);
 		}
 	}
 
-	private Configuration extractConfiguration(JSAPResult jsapResult) {
-		Configuration configuration = new Configuration(jsapResult.getString(JsapParameters.INPUT_FILE.getID()), formatToString(jsapResult, JsapParameters.FROM_FORMAT.getID()), formatToString(jsapResult, JsapParameters.TO_FORMAT.getID()));
+	private Configuration extractConfiguration(JSAPResult jsapResult) throws ParameterException {
+		Configuration configuration = new Configuration(jsapResult.getString(JsapParameters.INPUT_FILE.getID()), inputFormatToString(jsapResult, JsapParameters.FROM_FORMAT.getID()), outputFormatToString(jsapResult, JsapParameters.TO_FORMAT.getID()));
 		configuration.setOutputFilename(jsapResult.getString(JsapParameters.OUTPUT_FILE.getID()));
 		configuration.setValidate(jsapResult.getBoolean(JsapParameters.VALIDATE.getID()));
 		return configuration;
@@ -46,10 +46,14 @@ public class JsapBasedArgumentParser implements ArgumentParser {
 		return stringBuilder.toString();
 	}
 
-	private MarcFormat formatToString(JSAPResult jsapResult, String id) {
-		return MarcFormat.fromString(jsapResult.getString(id));
+	private MarcFormat inputFormatToString(JSAPResult jsapResult, String id) throws ParameterException {
+		return MarcFormat.inputFormatFromString(jsapResult.getString(id));
 	}
 
+	private MarcFormat outputFormatToString(JSAPResult jsapResult, String id) throws ParameterException {
+		return MarcFormat.outputFormatFromString(jsapResult.getString(id));
+	}
+	
 	public String getHelp() {
 		return "Usage:\n  MarcConverter " + jsap.getUsage() + "\nwhere allowed parameters are:\n\n" + jsap.getHelp();
 	}
