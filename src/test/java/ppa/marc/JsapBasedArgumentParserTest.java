@@ -50,6 +50,7 @@ public class JsapBasedArgumentParserTest extends TestCase {
 			argumentParser.parseArgument(ARGUMENTS);
 			fail();
 		} catch(ParameterException expected) {
+			assertTrue(expected.isShowHelp());
 			assertEquals("There were errors in command line arguments:\n- " + ERROR_ONE + "\n- " + ERROR_TWO + "\n", expected.getMessage());
 		}
 	}
