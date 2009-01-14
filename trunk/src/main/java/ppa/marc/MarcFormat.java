@@ -17,7 +17,6 @@ public class MarcFormat {
 	private final String format;
 
 	static {
-		outputFormats.put("MARC21", MARC21);
 		outputFormats.put("MARC21_TEXT", MARC21_TEXT);
 		outputFormats.put("UNIMARC_TEXT", UNIMARC_TEXT);
 		inputFormats.put("MARC21", MARC21);

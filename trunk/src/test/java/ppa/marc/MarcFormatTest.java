@@ -13,7 +13,7 @@ public class MarcFormatTest extends TestCase {
 	}
 
 	public void testGrantedMarc21IsGivenToParserThenReturnsMarc21() throws Exception {
-		assertEquals(MarcFormat.MARC21, MarcFormat.outputFormatFromString("MARC21"));
+		assertEquals(MarcFormat.MARC21, MarcFormat.inputFormatFromString("MARC21"));
 	}
 
 	public void testGrantedMarc21TextIsGivenToParserThenReturnsMarc21Text() throws Exception {
@@ -42,7 +42,7 @@ public class MarcFormatTest extends TestCase {
 			MarcFormat.outputFormatFromString("unknown");
 			fail();
 		} catch(ParameterException expected) {
-			assertEquals("Output format 'unknown' isn't supported; supported output formats are MARC21, MARC21_TEXT and UNIMARC_TEXT.", expected.getMessage());
+			assertEquals("Output format 'unknown' isn't supported; supported output formats are MARC21_TEXT and UNIMARC_TEXT.", expected.getMessage());
 		}
 	}
 	

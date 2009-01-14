@@ -18,7 +18,7 @@ Lists supported input formats	[Tags]	regression	issue-1
 Lists supported output formats	[Tags]	regression	issue-1
 	Run converter with arguments	--to unknown file
 	${actualOutput}= 	Run	cat target/stderr
-	Should contain	${actualOutput}	; supported output formats are MARC21, MARC21_TEXT and UNIMARC_TEXT.
+	Should contain	${actualOutput}	; supported output formats are MARC21_TEXT and UNIMARC_TEXT.
 
 Usage and help in case of no parameters	[Tags]	regression
 	Run converter with arguments	\
