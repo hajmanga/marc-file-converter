@@ -1,0 +1,46 @@
+001    1599395
+005    20020828202134.0
+008    941222s1995    enka     b    001 0 eng  
+035.__ |9 (DLC)   94047624
+906.__ |a 7
+       |b cbc
+       |c orignew
+       |d 1
+       |e ocip
+       |f 19
+       |g y-gencatlg
+955.__ |a pc16 to vp00 12-22-94; vl22 12-22-94; vn34/sl 12-23-94; CIP ver. pv04 03-29-96
+010.__ |a    94047624 
+020.__ |a 0521470668 (hardback)
+020.__ |a 0521476682 (paperback)
+040.__ |a DLC
+       |c DLC
+       |d DLC
+050.00 |a ML945
+       |b .C36 1995
+082.00 |a 788.6/2
+       |2 20
+245.04 |a The Cambridge companion to the clarinet /
+       |c edited by Colin Lawson.
+260.__ |a Cambridge [England] ;
+       |a New York, NY, USA :
+       |b Cambridge University Press,
+       |c 1995.
+300.__ |a xiv, 240 p. :
+       |b ill. ;
+       |c 26 cm.
+440._0 |a Cambridge companions to music
+504.__ |a Includes bibliographical references (p. [222]-229) and index.
+650._0 |a Clarinet.
+700.1_ |a Lawson, Colin
+       |q (Colin James)
+856.42 |3 Publisher description
+       |u http://www.loc.gov/catdir/description/cam026/94047624.html
+856.41 |3 Table of contents
+       |u http://www.loc.gov/catdir/toc/cam024/94047624.html
+991.__ |b c-Music
+       |h ML945
+       |i .C36 1995
+       |p 00002232868
+       |t Copy 1
+       |w BOOKS

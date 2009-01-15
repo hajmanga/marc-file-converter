@@ -44,7 +44,7 @@
         <configuration> 
           <tasks> 
             <exec executable="pybot">
-	      <arg value="--critical"/>
+	      <arg value="--include"/>
 	      <arg value="regression"/>
 	      <arg value="--outputdir"/>
 	      <arg value="target"/>

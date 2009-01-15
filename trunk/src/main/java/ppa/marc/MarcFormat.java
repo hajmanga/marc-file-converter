@@ -10,6 +10,7 @@ public class MarcFormat {
 	public static final MarcFormat MARC21 = new MarcFormat("MARC21");
 	public static final MarcFormat UNIMARC_TEXT = new MarcFormat("UNIMARC_TEXT");
 	public static final MarcFormat MARC21_TEXT = new MarcFormat("MARC21_TEXT");
+	public static final MarcFormat UNIMARC = new MarcFormat("UNIMARC");
 
 	private static final Map<String, MarcFormat> outputFormats = new LinkedHashMap<String, MarcFormat>();
 	private static final Map<String, MarcFormat> inputFormats = new LinkedHashMap<String, MarcFormat>();
@@ -18,8 +19,10 @@ public class MarcFormat {
 
 	static {
 		outputFormats.put("MARC21_TEXT", MARC21_TEXT);
+		outputFormats.put("UNIMARC", UNIMARC);
 		outputFormats.put("UNIMARC_TEXT", UNIMARC_TEXT);
 		inputFormats.put("MARC21", MARC21);
+		inputFormats.put("UNIMARC", UNIMARC);
 	}
 	
 	protected MarcFormat(String format) {

@@ -16,6 +16,14 @@ public class MarcFormatTest extends TestCase {
 		assertEquals(MarcFormat.MARC21, MarcFormat.inputFormatFromString("MARC21"));
 	}
 
+	public void testGrantedUnimarcIsGivenAsInputFormatToParserThenReturnsIt() throws Exception {
+		assertEquals(MarcFormat.UNIMARC, MarcFormat.inputFormatFromString("UNIMARC"));
+	}
+
+	public void testGrantedUnimarcIsGivenAsOuputFormatToParserThenReturnsIt() throws Exception {
+		assertEquals(MarcFormat.UNIMARC, MarcFormat.outputFormatFromString("UNIMARC"));
+	}
+	
 	public void testGrantedMarc21TextIsGivenToParserThenReturnsMarc21Text() throws Exception {
 		assertEquals(MarcFormat.MARC21_TEXT, MarcFormat.outputFormatFromString("MARC21_TEXT"));
 	}
@@ -33,7 +41,7 @@ public class MarcFormatTest extends TestCase {
 			MarcFormat.inputFormatFromString("unimarc_text");
 			fail();
 		} catch(ParameterException expected) {
-			assertEquals("Input format 'unimarc_text' isn't supported; supported input format is MARC21.", expected.getMessage());
+			assertEquals("Input format 'unimarc_text' isn't supported; supported input formats are MARC21 and UNIMARC.", expected.getMessage());
 		}
 	}
 
@@ -42,7 +50,7 @@ public class MarcFormatTest extends TestCase {
 			MarcFormat.outputFormatFromString("unknown");
 			fail();
 		} catch(ParameterException expected) {
-			assertEquals("Output format 'unknown' isn't supported; supported output formats are MARC21_TEXT and UNIMARC_TEXT.", expected.getMessage());
+			assertEquals("Output format 'unknown' isn't supported; supported output formats are MARC21_TEXT, UNIMARC and UNIMARC_TEXT.", expected.getMessage());
 		}
 	}
 	
