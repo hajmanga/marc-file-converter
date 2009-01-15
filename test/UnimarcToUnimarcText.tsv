@@ -1,0 +1,16 @@
+*Setting*	*Value*	*Value*	*Value*
+Library	OperatingSystem
+
+*Variable*	*Value* *Value*
+${testDataDirectory}	test/data
+
+*Test case*	*Value*	*Value*
+Basic UNIMARC text conversion	[Tags]	regression	
+	# Uses MARC21 and MARC21_TEXT data set, but verification still works because conversion is in reality a text dump of binary file.
+	Test converter with data set	unimarc
+
+*Keyword*	*Action*	*Argument*	*Argument*
+Test converter with data set	[Arguments]	${basename}	
+	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.unimarc_text
+	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar --from unimarc --to unimarc_text ${testDataDirectory}/${basename}.unimarc
+	Should be equal	${expectedOutput}	${actualOutput}

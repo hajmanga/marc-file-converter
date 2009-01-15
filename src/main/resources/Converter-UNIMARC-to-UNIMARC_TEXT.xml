@@ -11,11 +11,6 @@
                            http://www.springframework.org/schema/aop 
                            http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
-  <import resource="ppa.marc.RecordWriter.xml"/>
-
-   <bean id="formatBean" class="ppa.marc.writer.UnimarcRecordWriter">
-        <constructor-arg ref="directoryWriter"/>
-        <constructor-arg ref="dataFieldsWriter"/>
-  </bean>
+  <bean id="formatBean" class="ppa.marc.converter.EmptyConversionController"/>
 
 </beans>
