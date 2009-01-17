@@ -32,7 +32,7 @@
             <value>1</value>
           </key>
           <list>
-            <ref bean="renameTo001__"/>
+            <ref bean="renameTo001"/>
           </list>
         </entry>
    	<entry>
@@ -40,7 +40,7 @@
             <value>5</value>
           </key>
           <list>
-            <ref bean="renameTo005__"/>
+            <ref bean="renameTo005"/>
           </list>
         </entry>
     	<entry>

@@ -11,16 +11,12 @@
                            http://www.springframework.org/schema/aop 
                            http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
 
-  <bean id="renameTo001__" class="ppa.marc.converter.generic.FieldIdChanger">
+  <bean id="renameTo001" class="ppa.marc.converter.generic.FieldIdChanger">
     <constructor-arg value="1" index="0"/>
-    <constructor-arg value="_" index="1"/>
-    <constructor-arg value="_" index="2"/>
   </bean>
 
-  <bean id="renameTo005__" class="ppa.marc.converter.generic.FieldIdChanger">
+  <bean id="renameTo005" class="ppa.marc.converter.generic.FieldIdChanger">
     <constructor-arg value="5" index="0"/>
-    <constructor-arg value="_" index="1"/>
-    <constructor-arg value="_" index="2"/>
   </bean>
 
   <bean id="renameTo010__" class="ppa.marc.converter.generic.FieldIdChanger">
