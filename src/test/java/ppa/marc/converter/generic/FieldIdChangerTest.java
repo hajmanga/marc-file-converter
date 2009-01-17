@@ -15,6 +15,7 @@ public class FieldIdChangerTest extends TestCase {
 		assertEquals(20, field.getId());
 		assertEquals('1', field.getFirstIndicator());
 		assertEquals('2', field.getSecondIndicator());
+		assertTrue(field.isControlField());
 	}
 	
 	public void testIdAndIndicatorsAreChangedIfSpecifiedInConstructor() throws Exception {
@@ -23,6 +24,7 @@ public class FieldIdChangerTest extends TestCase {
 		assertEquals(20, field.getId());
 		assertEquals('a', field.getFirstIndicator());
 		assertEquals('b', field.getSecondIndicator());
+		assertFalse(field.isControlField());
 	}
 	
 }

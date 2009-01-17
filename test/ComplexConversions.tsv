@@ -5,7 +5,7 @@ Library	OperatingSystem
 ${testDataDirectory}	test/data
 
 *Test case*	*Value*	*Value*
-Marc21 to Unimarc to Unimarc_text	[Tags]
+Marc21 to Unimarc to Unimarc_text	[Tags]	regression
 	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar --to unimarc ${testDataDirectory}/basic.source -o target/basic.unimarc
 	${actualOutput}=	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar --from unimarc --to unimarc_text target/basic.unimarc
 	${expectedOutput}=	Run	cat ${testDataDirectory}/basic.unimarc_text
