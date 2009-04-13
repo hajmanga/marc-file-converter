@@ -1,5 +1,6 @@
 package ppa.marc.converter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -32,9 +33,15 @@ public class DefaultConversionController implements ConversionController {
 	}
 
 	private void executeConvertersOnField(final Field field) {
-		for(FieldConverter fieldConverter : fieldConverters.get(Integer.valueOf(field.getId()))) {
+		for(FieldConverter fieldConverter : getConvertersOfField(field)) {
 			fieldConverter.convert(field);
 		}
+	}
+
+	private List<FieldConverter> getConvertersOfField(final Field field) {
+		List<FieldConverter> converters = fieldConverters.get(Integer.valueOf(field.getId()));
+		if(converters == null) converters = new ArrayList<FieldConverter>();
+		return converters;
 	}
 
 	private void executeConvertersOnRecord(List<RecordConverter> recordConverters, final Record record) {
