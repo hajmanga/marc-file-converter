@@ -17,6 +17,7 @@ import junit.framework.TestCase;
 
 public class DefaultConversionControllerTest extends TestCase {
 
+	private static final int FIELD_WITHOUT_CONVERTERS = 300;
 	RecordConverter preRecordConverter = createStrictMock(RecordConverter.class);
 	RecordConverter postRecordConverter = createStrictMock(RecordConverter.class);
 
@@ -64,6 +65,13 @@ public class DefaultConversionControllerTest extends TestCase {
 		verifyFieldMocks();
 	}
 
+	public void testGrantedFieldHasNoConversionControllerThenConvertDoesNothing() throws Exception {
+		field.setId(FIELD_WITHOUT_CONVERTERS);
+		replayFieldMocks();
+		controller.convert(record);
+		verifyFieldMocks();
+	}
+	
 	private void replayFieldMocks() {
 		replay(fieldConverter[0]);
 		replay(fieldConverter[1]);

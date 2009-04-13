@@ -32,6 +32,9 @@ Removes field 984	[Tags]	regression
 Removes field 856	[Tags]	regression	
 	Test converter with data set	removes856
 
+Removes field 350	[Tags]	regression	
+	Test converter with data set	field350
+
 *Keyword*	*Action*	*Argument*	*Argument*
 Test converter with data set	[Arguments]	${basename}	
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.unimarc_text
