@@ -1,7 +1,5 @@
 package ppa.marc.validator;
 
-import ppa.marc.validator.Severity;
-import ppa.marc.validator.ValidationMessage;
 import junit.framework.TestCase;
 
 public class ValidationMessageTest extends TestCase {

@@ -5,10 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import ppa.marc.domain.Record;
-import ppa.marc.validator.Rule;
-import ppa.marc.validator.Severity;
-import ppa.marc.validator.ValidationMessage;
-import ppa.marc.validator.Validator;
 
 import junit.framework.TestCase;
 

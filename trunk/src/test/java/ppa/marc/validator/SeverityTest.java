@@ -1,6 +1,5 @@
 package ppa.marc.validator;
 
-import ppa.marc.validator.Severity;
 import junit.framework.TestCase;
 
 public class SeverityTest extends TestCase {
