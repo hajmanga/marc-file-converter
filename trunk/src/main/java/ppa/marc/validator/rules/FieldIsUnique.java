@@ -26,16 +26,17 @@ public class FieldIsUnique implements Rule {
 
 	public List<ValidationMessage> validate(Record record) {
 		List<ValidationMessage> messages = new ArrayList<ValidationMessage>();
-		Collection fields = CollectionUtils.select(record.getFields(), fieldByIdPredicate);
+		@SuppressWarnings("unchecked")
+		Collection<Field> fields = CollectionUtils.select(record.getFields(), fieldByIdPredicate);
 		if(fields.size() > 1) messages.add(createValidationMessage(fields));
 		return messages;
 	}
 
-	private ValidationMessage createValidationMessage(Collection fields) {
+	private ValidationMessage createValidationMessage(Collection<Field> fields) {
 		return new ValidationMessage(severity, "There are " + fields.size() + " instances of field " + extractFieldIdAsString(fields) + "; expected one.");
 	}
 
-	private String extractFieldIdAsString(Collection fields) {
+	private String extractFieldIdAsString(Collection<Field> fields) {
 		return StringUtils.leftPad(String.valueOf(((Field) fields.iterator().next()).getId()), 3, '0');
 	}
 
