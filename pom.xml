@@ -3,7 +3,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   <modelVersion>4.0.0</modelVersion> 
   <groupId>ppa.ucconv</groupId> 
   <artifactId>marc-file-converter</artifactId> 
-  <version>0.5</version> 
+  <version>0.9</version> 
   <name>MARC converter</name> 
   <packaging>jar</packaging> 
   <build>

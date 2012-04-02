@@ -19,13 +19,14 @@ public class TocSplitter implements FieldConverter {
 	}
 	
 	public void convert(Field field) {
-		Collection subFields = CollectionUtils.select(field.getSubFields(), subFieldByIdSelector);
+		@SuppressWarnings("unchecked")
+		Collection<SubField> subFields = CollectionUtils.select(field.getSubFields(), subFieldByIdSelector);
 		if(subFields.isEmpty()) return;
 		if(subFields.size() > 1) throw new RuntimeException("Field " + field.getId() + " has more than one 'a' subfield.");
 		convertSingleSubFieldToMany(field, subFields);
 	}
 
-	private void convertSingleSubFieldToMany(Field field, Collection subFields) {
+	private void convertSingleSubFieldToMany(Field field, Collection<SubField> subFields) {
 		field.getSubFields().clear();
 		String[] tocEntries = StringUtils.splitByWholeSeparator(((SubField) subFields.iterator().next()).getValue(), " -- ");
 		for(int i = 0; i < tocEntries.length; ++i) {

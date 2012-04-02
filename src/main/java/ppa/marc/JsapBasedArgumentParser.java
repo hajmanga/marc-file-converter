@@ -36,8 +36,8 @@ public class JsapBasedArgumentParser implements ArgumentParser {
 		return configuration;
 	}
 
-	@SuppressWarnings("unchecked")  // JSAP returns messages without type
 	private String extractErrorMessage(JSAPResult jsapResult) {
+		@SuppressWarnings("rawtypes")
 		Iterator it = jsapResult.getErrorMessageIterator();
 		StringBuilder stringBuilder = new StringBuilder("There were errors in command line arguments:\n");
 		while(it.hasNext()) {
