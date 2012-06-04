@@ -12,5 +12,5 @@ Basic UNIMARC text conversion	[Tags]	regression
 *Keyword*	*Action*	*Argument*	*Argument*
 Test converter with data set	[Arguments]	${basename}	
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.unimarc_text
-	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar --from unimarc --to unimarc_text ${testDataDirectory}/${basename}.unimarc
+	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.9-jar-with-dependencies.jar --from unimarc --to unimarc_text ${testDataDirectory}/${basename}.unimarc
 	Should be equal	${expectedOutput}	${actualOutput}
