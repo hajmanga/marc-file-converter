@@ -28,4 +28,4 @@ Usage and help in case of no parameters	[Tags]	regression
 
 *Keyword*	*Action*	*Argument*	*Argument*
 Run converter with arguments	[Arguments]	${args}
-	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar ${args} 2> target/stderr
+	Run	java -jar target/marc-file-converter-0.9-jar-with-dependencies.jar ${args} 2> target/stderr

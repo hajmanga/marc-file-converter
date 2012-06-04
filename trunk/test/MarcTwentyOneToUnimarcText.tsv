@@ -38,5 +38,5 @@ Removes field 350	[Tags]	regression
 *Keyword*	*Action*	*Argument*	*Argument*
 Test converter with data set	[Arguments]	${basename}	
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/${basename}.unimarc_text
-	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar ${testDataDirectory}/${basename}.source
+	${actualOutput}= 	Run	java -jar target/marc-file-converter-0.9-jar-with-dependencies.jar ${testDataDirectory}/${basename}.source
 	Should be equal	${expectedOutput}	${actualOutput}

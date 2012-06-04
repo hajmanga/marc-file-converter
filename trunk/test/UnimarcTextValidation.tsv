@@ -22,7 +22,7 @@ Error about pipe character is shown 	[Tags]	regression
 
 *Keyword*	*Action*	*Argument*	*Argument*
 Test validation with data set	[Arguments]	${basename}	
-	Run	java -jar target/marc-file-converter-0.5-jar-with-dependencies.jar -v ${testDataDirectory}/${basename}.source 2> target/stderr
+	Run	java -jar target/marc-file-converter-0.9-jar-with-dependencies.jar -v ${testDataDirectory}/${basename}.source 2> target/stderr
 	${actualOutput}= 	Run	cat target/stderr
 	${expectedOutput}= 	Run	cat ${testDataDirectory}/errors-${basename}.unimarc_text
 	Should be equal	${expectedOutput}	${actualOutput}
