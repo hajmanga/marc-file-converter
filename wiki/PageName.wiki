@@ -28,3 +28,7 @@ The converter as it is now only can read and write MARC21 and Unimarc records. I
   * actual conversion and validation steps are implemented as Spring beans.
 
 When adding a new conversion rule to existing conversion, modify suitable Converter-source-to-destination.xml, and if needed then add new Spring beans which implement the required logic.
+
+When adding new validation rules, add required beans to Validation-format.xml.
+
+When adding new support for new formats, add a new Conversion-source-to-destination.xml. This sounds simple, but is quite laborous task compared to enhancing existing conversions.
