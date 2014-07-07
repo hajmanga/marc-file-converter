@@ -12,7 +12,7 @@ or if there are failing tests with
 
 {{{ mvn clean install -Dmaven.test.skip}}}
 
-Obtain source records for example from [http://catalog.loc.gov|Library of Congress] (search, and then save record). There are some examples in marc-file-converter's test/data directory.
+Obtain source records for example from [http://catalog.loc.gov Library of Congress] (search, and then save record). There are some examples in marc-file-converter's test/data directory.
 
 Convert the record with
 
