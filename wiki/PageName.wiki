@@ -1,5 +1,3 @@
-#ExampleOfUse
-
 = Introduction =
 
 A brief description of marc-file-converter's use.
