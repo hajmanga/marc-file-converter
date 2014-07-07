@@ -23,8 +23,8 @@ This will read MARC21 records from file example.marc21, write conversion results
 = Extending the Converter =
 
 The converter as it is now only can read and write MARC21 and Unimarc records. If you need to extend it to support additional MARC dialects, or enhance current conversion or validation, then following information could be useful:
-* format to format conversion is made of rules defined in Spring configutation files named Conversion-source-to-destination.xml. Each file defines a map which contains entries from field identifiers to actions. The actions are spring beans that do simple conversion actions in sequence. For example field 505 is filtered with table of contents splitter and then renamed to field 327.
-* validation works in similar manner, with files being named Validator-format.xml.
-* actual conversion and validation steps are implemented as Spring beans.
+  * format to format conversion is made of rules defined in Spring configutation files named Conversion-source-to-destination.xml. Each file defines a map which contains entries from field identifiers to actions. The actions are spring beans that do simple conversion actions in sequence. For example field 505 is filtered with table of contents splitter and then renamed to field 327.
+  * validation works in similar manner, with files being named Validator-format.xml.
+  * actual conversion and validation steps are implemented as Spring beans.
 
 When adding a new conversion rule to existing conversion, modify suitable Converter-source-to-destination.xml, and if needed then add new Spring beans which implement the required logic.
